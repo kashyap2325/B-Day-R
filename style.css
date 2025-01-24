@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+    font-family: "Crimson Text", serif;
+}
+
+body {
+    background-image: url(bg2.jpg);
+    background-size: cover;
+    background-position: center 100px;
+    background-repeat: no-repeat;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.letter-container {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #f5edd1;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out 0.5s;
+}
+
+.letter-v {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 100px solid transparent;
+    border-right: 150px solid #e6cfa7;
+    border-bottom: 100px solid #e6cfa7;
+    border-left: 150px solid #e6cfa7;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out 0.5s;
+}
+
+.letter-triangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 120px solid #ecdeb8;
+    border-right: 150px solid transparent;
+    border-bottom: 80px solid transparent;
+    border-left: 150px solid transparent;
+    transition: all 0.5s ease-in-out 0.5s;
+    transform-origin: top;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.letter-content {
+    display: flex;
+    padding: 30px 10px;
+    gap: 10px;
+    height: inherit;
+    border-radius: 8px;
+    align-items: center;
+    flex-direction: column;
+    opacity: .5;
+    scale: .7;
+    transition: all .7s ease-in-out;
+
+    background: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.4px);
+    -webkit-backdrop-filter: blur(6.4px);
+    border: 1px solid rgba(255, 255, 255, 0.29);
+    font-weight: lighter;
+
+    p {
+        mix-blend-mode: hard-light;
+        text-align: center;
+    }
+}
+
+.letter-heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20%);
+    width: 35px;
+    height: 35px;
+    z-index: 4;
+    transform-origin: bottom-center;
+    transition: rotate .3s ease-in-out .3s;
+}
+
+.active.letter-container{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.active>.letter-triangle {
+    transform: rotateX(160deg);
+    border-radius: 0;
+    z-index: 0;
+}
+
+.active > .letter-v{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.active>.letter-content {
+    opacity: 1;
+    scale: .95;
+    transform: translateY(-50%);
+    transition-delay: .7s;
+}
+
+.active > .letter-heart {
+    rotate: 30deg;
+}
+
+.btn {
+    width: 120px;
+    height: 120px;
+    background-color: transparent;
+    border: none;
+}
